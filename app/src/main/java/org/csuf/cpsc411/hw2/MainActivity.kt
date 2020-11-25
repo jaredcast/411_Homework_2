@@ -46,7 +46,7 @@ open class MainActivity : AppCompatActivity() {
                 Log.d("MainActivity", "Added ${claimTitleStr} and ${dateStr}")
                 tempTitle.text.clear()
                 tempDate.text.clear()
-                statusText.text = "Status: Claim successfully added."
+                statusText.text = "Status: Claim ${claimTitleStr} successfully added."
             }
         }
 
