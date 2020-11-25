@@ -18,7 +18,7 @@ class ObjDetailScreenGenerator(val ctx : Context) {
 
 
         ///////////////////////////////////////////////////////////////////////////////////
-        //Create a new linear layout for top text
+        //Create a new linear layout for top text asking for claim info
 
         val textParams = LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
@@ -35,7 +35,7 @@ class ObjDetailScreenGenerator(val ctx : Context) {
         layoutObj.addView(title, textParams)
 
         ///////////////////////////////////////////////////////////////////////////////////
-        //Generate the objects needed - fldRowGenerator
+        //Generate the objects needed - fldRowGenerator and colView.
         val lParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.MATCH_PARENT
@@ -47,7 +47,7 @@ class ObjDetailScreenGenerator(val ctx : Context) {
         // Add objdetail section
         val fldRowGenerator = ObjDetailSectionGenerator(ctx)
         val colView = fldRowGenerator.generate()
-        layoutObj.addView(colView)
+        layoutObj.addView(colView) //Add most of project to screen
         ///////////////////////////////////////////////////////////////////////////////////
         // add next button linear layout
         val nLayout = LinearLayout(ctx)
@@ -76,12 +76,12 @@ class ObjDetailScreenGenerator(val ctx : Context) {
         nbParams.gravity = Gravity.BOTTOM
         nLayout.addView(addButton, nbParams)
         //
-        layoutObj.addView(nLayout)
+        layoutObj.addView(nLayout) //Button has been added
 
         ///////////////////////////////////////////////////////////////////////////////////
 
 
-        //Create a new linear layout for Status
+        //Create a new linear layout for Status. This will change later
         val statusObj = LinearLayout(ctx)
         val statusParams = LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
@@ -90,7 +90,7 @@ class ObjDetailScreenGenerator(val ctx : Context) {
         statusParams.topMargin = 70
         statusParams.bottomMargin = 70
         var status = TextView(ctx)
-        status.setId(R.id.status_text)
+        status.setId(R.id.status_text) //IMPORTANT< MAKE SURE THIS IS REFERENCED IN MAINACTIVITY
         status.text = "Status: "
         status.gravity = Gravity.CENTER
         status.textSize = 20f

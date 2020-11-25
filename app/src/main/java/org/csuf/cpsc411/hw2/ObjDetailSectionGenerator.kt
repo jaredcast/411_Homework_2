@@ -22,16 +22,16 @@ class ObjDetailSectionGenerator(val ctx : Context) {
         val lcParams = LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.MATCH_PARENT)
-        val colGenerator = LableColumnGenerator(ctx)
-        var lblView = colGenerator.generate()
+        val colGenerator = LableColumnGenerator(ctx) //Makes the columns
+        var lblView = colGenerator.generate() //Generate them
         lcParams.weight = 1.0F
         layoutObj.addView(lblView, lcParams)
 
-        val valGenerator = ValueColumnGenerator(ctx)
+        val valGenerator = ValueColumnGenerator(ctx) //Get the values for the boxes
         val vcParams = LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT)
-        lblView = valGenerator.generate()
+        lblView = valGenerator.generate() //Generate them
         vcParams.marginStart = 5
         vcParams.weight = 3.0F
         layoutObj.addView(lblView, vcParams) //Create and add another linear layout

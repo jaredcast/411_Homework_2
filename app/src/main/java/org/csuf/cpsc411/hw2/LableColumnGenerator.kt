@@ -29,22 +29,20 @@ class LableColumnGenerator(val ctx : Context) {
         lbParams.topMargin = 5
         lbParams.bottomMargin = 5
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////// Create box for claim title
         var lbl = TextView(ctx)
         lbl.text = "Claim Title"
         lbl.gravity = Gravity.CENTER
         lbl.setBackgroundColor(Color.LTGRAY)
         layoutObj.addView(lbl, lbParams)
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////// Create box for claim date
         lbl = TextView(ctx)
         lbl.text = "Claim Date"
         lbl.gravity = Gravity.CENTER
         lbl.setBackgroundColor(Color.LTGRAY)
         layoutObj.addView(lbl, lbParams)
         ///////////////////////////////////////////////////////////////
-
-        lbl = TextView(ctx)
         return layoutObj
     }
 }

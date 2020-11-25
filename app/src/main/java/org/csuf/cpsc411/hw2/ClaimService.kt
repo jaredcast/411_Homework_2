@@ -104,7 +104,7 @@ class ClaimService (val ctx : MainActivity){
             TODO("Not yet implemented")
         }
     }
-
+    //Creates a claim to add to post.
     fun addClaim(cObj : Claim) {
         val client = AsyncHttpClient()
         val requestUrl = "http://192.168.56.1:8080/ClaimService/addClaim"
@@ -114,6 +114,7 @@ class ClaimService (val ctx : MainActivity){
         val entity = StringEntity(pJsonString)
 
         // cxt is an Android Application Context object
+        //Sending the post
         client.post(ctx, requestUrl, entity, "application/json", addServiceRespHandler())
         Log.d("addClaim", "Adding claim")
     }
