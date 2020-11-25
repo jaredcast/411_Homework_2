@@ -10,7 +10,7 @@ import org.csuf.cpsc411.simplehttpclient.*
 import java.util.*
 
 
-//Homework Assignment 2
+//Homework Assignment 2, this constructs main screen
 open class MainActivity : AppCompatActivity() {
     // lateinit var pList : MutableList<Person>
     lateinit var cService : ClaimService
