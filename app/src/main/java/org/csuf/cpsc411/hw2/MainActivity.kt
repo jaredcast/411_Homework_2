@@ -36,6 +36,13 @@ open class MainActivity : AppCompatActivity() {
             var claimTitleStr = tempTitle.text.toString()
             var dateStr = tempDate.text.toString()
 
+            /*if (cService.isOnline == false)
+            {
+                statusText.text = "Status: Error, database is offline."
+            }
+            else if (claimTitleStr == "" || dateStr == "") {
+                statusText.text = "Status: Cannot be blank, try again."
+            }*/
             if (claimTitleStr == "" || dateStr == "") {
                 statusText.text = "Status: Cannot be blank, try again."
             }

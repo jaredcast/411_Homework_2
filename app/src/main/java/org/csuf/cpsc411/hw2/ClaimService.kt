@@ -27,62 +27,6 @@ class ClaimService (val ctx : MainActivity){
             return cService!! //Unwrapping operation
         }
     }
-
-    /*fun next() : Claim {
-        currentIndx = currentIndx + 1
-        return claimList[currentIndx]
-    }
-
-    fun isLastObject() : Boolean { //Enable or disable last object
-        if (currentIndx == claimList.count() - 1) return true
-        return false //else
-    }
-
-    fun fetchAt(e : Int) : Claim {
-        currentIndx = e
-        return claimList[currentIndx]
-    }*/
-
-    /*
-    inner class GetAllServiceRespHandler : AsyncHttpResponseHandler() {
-        override fun onSuccess(
-            statusCode: Int,
-            headers: Array<out Header>?,
-            responseBody: ByteArray?
-        ) {
-            // JSON string
-            if (responseBody != null) {
-                Log.d("Claim Service", "The response JSON string is ${String(responseBody)}")
-                /*val gson = Gson()
-                val claimListType: Type = object : TypeToken<List<Claim>>() {}.type
-                claimList = gson.fromJson(String(responseBody), claimListType)
-                //
-                if (ctx is SummaryScreenActivity) {
-                    (ctx as SummaryScreenActivity).refreshScreen()
-                } else {
-                    ctx.refreshScreen(claimList[currentIndx])
-                }
-                Log.d("Claim Service", "The Claim List: ${claimList}")
-                //else ctx.refreshScreen(personList[currentIndx])
-                //ctx.refreshScreen(personList[currentIndx]) //Asynchronous call can only guarantee it exists here
-                //
-                //act.runOnUiThread {
-                //    cbLambdaFunction()
-                //}*/
-
-            }
-        }
-
-        override fun onFailure(
-            statusCode: Int,
-            headers: Array<out Header>?,
-            responseBody: ByteArray?,
-            error: Throwable?
-        ) {
-            TODO("Not yet implemented")
-        }
-    }*/
-
     inner class addServiceRespHandler : AsyncHttpResponseHandler() {
         override fun onSuccess(
             statusCode: Int,
