@@ -16,7 +16,7 @@ class ClaimService (val ctx : MainActivity){
 
     //var claimList : MutableList<Claim> = mutableListOf()
     //var currentIndx : Int = 0
-
+    var isOnline:Boolean=true
     companion object { //Unwrapping, define claimservice as optional type
         //When you return, the return point is claim service
         private var cService : ClaimService? = null
@@ -33,6 +33,7 @@ class ClaimService (val ctx : MainActivity){
             headers: Array<out Header>?,
             responseBody: ByteArray?
         ) {
+            isOnline = true
             if (responseBody != null) {
                 val respStr = String(responseBody)
                 Log.d("Claim Service", "The add Service response : ${respStr}")
@@ -45,7 +46,7 @@ class ClaimService (val ctx : MainActivity){
             responseBody: ByteArray?,
             error: Throwable?
         ) {
-            TODO("Not yet implemented")
+            isOnline = false
         }
     }
     //Creates a claim to add to post.
