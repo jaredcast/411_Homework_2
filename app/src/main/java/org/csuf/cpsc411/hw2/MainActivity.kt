@@ -49,14 +49,19 @@ open class MainActivity : AppCompatActivity() {
             else {
                 var newClaim = Claim(UUID.randomUUID(), claimTitleStr, dateStr, false)
                 cService.addClaim(newClaim)
-
-                Log.d("MainActivity", "Added ${claimTitleStr} and ${dateStr}")
-                tempTitle.text.clear()
-                tempDate.text.clear()
-                statusText.text = "Status: Claim ${claimTitleStr} successfully added."
+                if (cService.isOnline == false)
+                {
+                    Log.d("MainActivity", "Failed")
+                    statusText.text = "Status: failed to add claim"
+                }
+                else {
+                    Log.d("MainActivity", "Added ${claimTitleStr} and ${dateStr}")
+                    tempTitle.text.clear()
+                    tempDate.text.clear()
+                    statusText.text = "Status: Claim ${claimTitleStr} successfully added."
+                }
             }
         }
-
     }
 }
 
