@@ -30,31 +30,25 @@ open class MainActivity : AppCompatActivity() {
         bView.setOnClickListener() {
             // get the next Person object
             // then refresh screen
-            var tempTitle : EditText = findViewById(R.id.claimTitle)
-            var tempDate : EditText = findViewById(R.id.date)
+            var tempTitle : EditText = findViewById(R.id.claimTitle) //Title of claim
+            var tempDate : EditText = findViewById(R.id.date) //Date of claim
 
-            var claimTitleStr = tempTitle.text.toString()
-            var dateStr = tempDate.text.toString()
+            var claimTitleStr = tempTitle.text.toString() //Set the claim title
+            var dateStr = tempDate.text.toString() //Set the claim date
 
-            if (cService.isOnline == false)
-            {
-                statusText.text = "Status: Error, database is offline."
-            }
-            else if (claimTitleStr == "" || dateStr == "") {
+
+            if (claimTitleStr == "" || dateStr == "") { //If any field is blank
                 statusText.text = "Status: Cannot be blank, try again."
             }
-            /*if (claimTitleStr == "" || dateStr == "") {
-                statusText.text = "Status: Cannot be blank, try again."
-            }*/
             else {
-                var newClaim = Claim(UUID.randomUUID(), claimTitleStr, dateStr, false)
-                cService.addClaim(newClaim)
-                if (cService.isOnline == false)
+                var newClaim = Claim(UUID.randomUUID(), claimTitleStr, dateStr, false) //Create new string
+                cService.addClaim(newClaim) //Add claim with cService
+                if (cService.isOnline == false) //If offline, let user know
                 {
                     Log.d("MainActivity", "Failed")
                     statusText.text = "Status: failed to add claim"
                 }
-                else {
+                else { //Add claim
                     Log.d("MainActivity", "Added ${claimTitleStr} and ${dateStr}")
                     tempTitle.text.clear()
                     tempDate.text.clear()
