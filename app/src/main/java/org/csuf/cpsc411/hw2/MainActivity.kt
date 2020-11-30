@@ -36,8 +36,12 @@ open class MainActivity : AppCompatActivity() {
             var claimTitleStr = tempTitle.text.toString() //Set the claim title
             var dateStr = tempDate.text.toString() //Set the claim date
 
+<<<<<<< HEAD
 
             if (claimTitleStr == "" || dateStr == "") { //If any field is blank
+=======
+            if (claimTitleStr == "" || dateStr == "") {
+>>>>>>> parent of aa37f47... Clean up code
                 statusText.text = "Status: Cannot be blank, try again."
             }
             else {
