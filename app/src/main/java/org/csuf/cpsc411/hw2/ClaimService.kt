@@ -33,10 +33,9 @@ class ClaimService (val ctx : MainActivity){
             headers: Array<out Header>?,
             responseBody: ByteArray?
         ) {
-            isOnline = true
             if (responseBody != null) {
                 val respStr = String(responseBody)
-                Log.d("Claim Service", "The add Service response : ${respStr}")
+                Log.d("Claim Service", "Response from addService: ${respStr}")
             }
         }
 
@@ -46,7 +45,9 @@ class ClaimService (val ctx : MainActivity){
             responseBody: ByteArray?,
             error: Throwable?
         ) {
-            isOnline = false
+            //isOnline = false
+            //Log.d("Claim Service", "Failed to connect")
+            TODO("Not yet implemented")
         }
     }
     //Creates a claim to add to post.
@@ -60,7 +61,7 @@ class ClaimService (val ctx : MainActivity){
 
         // cxt is an Android Application Context object
         //Sending the post
-        client.post(ctx, requestUrl, entity, "application/json", addServiceRespHandler())
+        client.post(ctx, requestUrl, entity,"application/json", addServiceRespHandler())
         Log.d("addClaim", "Adding claim")
     }
 }
