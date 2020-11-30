@@ -45,9 +45,9 @@ class ClaimService (val ctx : MainActivity){
             responseBody: ByteArray?,
             error: Throwable?
         ) {
-            //isOnline = false
-            //Log.d("Claim Service", "Failed to connect")
-            TODO("Not yet implemented")
+            isOnline = false
+            Log.d("Claim Service", "Failed to connect")
+            //TODO("Not yet implemented")
         }
     }
     //Creates a claim to add to post.
